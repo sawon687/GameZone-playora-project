@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "title": "Grow a Garden",
+    "coverPhoto": "https://example.com/images/grow_a_garden.png",
+    "category": "Idle, Multiplayer",
+    "downloadLink": "https://www.roblox.com/games/1234567890/Grow-a-Garden",
+    "description": "A free-to-play multiplayer idle game where players tend to their garden by buying seeds and harvesting crops for money.",
+    "ratings": "4.8",
+    "developer": "BMWLux, Splitting Point Studios"
+  },
+  {
+    "id": "2",
+    "title": "Kingmakers",
+    "coverPhoto": "https://example.com/images/kingmakers.png",
+    "category": "Action-Strategy",
+    "downloadLink": "https://store.steampowered.com/app/1234560/Kingmakers/",
+    "description": "An action/strategy sandbox game set in medieval Great Britain, allowing players to use modern weapons in medieval times.",
+    "ratings": "4.7",
+    "developer": "Redemption Road Games"
+  },
+  {
+    "id": "3",
+    "title": "Ninja Gaiden 4",
+    "coverPhoto": "https://example.com/images/ninja_gaiden_4.png",
+    "category": "Action",
+    "downloadLink": "https://www.ninjagaiden.com/4",
+    "description": "The latest installment in the Ninja Gaiden series, featuring fast-paced combat and a new protagonist, Yakumo.",
+    "ratings": "4.9",
+    "developer": "Team Ninja, PlatinumGames"
+  },
+  {
+    "id": "4",
+    "title": "Arc Raiders",
+    "coverPhoto": "https://example.com/images/arc_raiders.png",
+    "category": "Extraction Shooter",
+    "downloadLink": "https://www.arcraiders.com",
+    "description": "An upcoming extraction shooter that gained significant attention during its playtest, with high concurrent player counts.",
+    "ratings": "4.6",
+    "developer": "Embark Studios"
+  },
+  {
+    "id": "5",
+    "title": "Monster Hunter: Wilds",
+    "coverPhoto": "https://example.com/images/monster_hunter_wilds.png",
+    "category": "Action RPG",
+    "downloadLink": "https://www.monsterhunter.com/wilds",
+    "description": "The latest entry in the Monster Hunter series, offering expansive environments and new monsters to hunt.",
+    "ratings": "4.8",
+    "developer": "Capcom"
+  },
+  {
+    "id": "6",
+    "title": "Hades II",
+    "coverPhoto": "https://example.com/images/hades_ii.png",
+    "category": "Action Roguelike",
+    "downloadLink": "https://www.supergiantgames.com/games/hades-ii/",
+    "description": "The sequel to the critically acclaimed Hades, featuring new characters and deeper narrative elements.",
+    "ratings": "4.9",
+    "developer": "Supergiant Games"
+  },
+  {
+    "id": "7",
+    "title": "Split Fiction",
+    "coverPhoto": "https://example.com/images/split_fiction.png",
+    "category": "Co-op Adventure",
+    "downloadLink": "https://www.hazelight.se/splitfiction",
+    "description": "A co-op adventure game from the creators of 'It Takes Two', offering a unique narrative and gameplay mechanics.",
+    "ratings": "5.0",
+    "developer": "Hazelight Studios"
+  },
+  {
+    "id": "8",
+    "title": "Abiotic Factor",
+    "coverPhoto": "https://example.com/images/abiotic_factor.png",
+    "category": "Survival Crafting",
+    "downloadLink": "https://www.abioticfactor.com",
+    "description": "A survival crafting experience set in an underground research facility, blending paranormal elements with gameplay.",
+    "ratings": "4.7",
+    "developer": "Abiotic Studios"
+  },
+  {
+    "id": "9",
+    "title": "Kingdom Come: Deliverance II",
+    "coverPhoto": "https://example.com/images/kingdom_come_deliverance_ii.png",
+    "category": "Action RPG",
+    "downloadLink": "https://www.kingdomcomerpg.com/kingdom-come-deliverance-ii",
+    "description": "The sequel to the critically acclaimed Kingdom Come: Deliverance, set in 15th century Bohemia during a civil war.",
+    "ratings": "4.8",
+    "developer": "Plaion"
+  },
+  {
+    "id": "10",
+    "title": "Final Fantasy Tactics - The Ivalice Chronicles",
+    "coverPhoto": "https://example.com/images/final_fantasy_tactics.png",
+    "category": "Tactical RPG",
+    "downloadLink": "https://www.finalfantasy.com/tactics-ivalice-chronicles",
+    "description": "A remastered version of the classic tactical RPG, featuring enhanced graphics and voice acting.",
+    "ratings": "4.9",
+    "developer": "Square Enix"
+  },
+  {
+    "id": "11",
+    "title": "Donkey Kong Bananza",
+    "coverPhoto": "https://example.com/images/donkey_kong_bananza.png",
+    "category": "Platformer",
+    "downloadLink": "https://www.nintendo.com/donkey-kong-bananza",
+    "description": "A new entry in the Donkey Kong series, offering fresh gameplay mechanics and vibrant visuals.",
+    "ratings": "4.7",
+    "developer": "Nintendo"
+  },
+  {
+    "id": "12",
+    "title": "Monster Train 2",
+    "coverPhoto": "https://example.com/images/monster_train_2.png",
+    "category": "Deckbuilding Roguelike",
+    "downloadLink": "https://www.monstertrain.com/2",
+    "description": "The sequel to the popular deckbuilding roguelike, introducing new mechanics and challenges.",
+    "ratings": "4.8",
+    "developer": "Shiny Shoe"
+  }
+]
