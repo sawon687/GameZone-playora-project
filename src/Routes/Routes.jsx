@@ -6,6 +6,7 @@ import Community from "../Pages/Community";
 import Myprofile from "../Pages/Myprofile";
 import UpdateProfile from "../Pages/UpdateProfile";
 import Home from "../Pages/Home";
+import GameDetails from "../Pages/GameDetails";
 
 const router=createBrowserRouter([
     {
@@ -17,6 +18,10 @@ const router=createBrowserRouter([
                 path:'/',
                 element:<Home></Home>,
 
+            },
+            {
+                path:'/GameDetails/:id',
+                element:<GameDetails></GameDetails>
             },
 
             {
