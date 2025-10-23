@@ -26,7 +26,7 @@ const settings = {
 
 
   return (
-  <div className="w-11/12 mt-15 mx-auto bg-[#181818]  py-5 rounded-2xl flex justify-center items-center"> 
+  <div className="w-10/12 mt-15 mx-auto bg-[#181818]  py-5 rounded-2xl flex justify-center items-center"> 
   <div className="w-full">
     <Slider {...settings}>
       {sliderImg.map((num, index) => (

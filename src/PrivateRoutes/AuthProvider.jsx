@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import auth from '../Farebase/farebase.init';
 import { Authcontext } from './Context';
@@ -7,7 +7,11 @@ const AuthProvider = ({children}) => {
  
    const [user,SetUser]=useState(null)
    const [loading ,setLodaing]=useState(true)
-   
+    const googleSignAndLoginProvider=new GoogleAuthProvider()
+
+    const signInAndLoginGoogle=()=>{
+        return signInWithPopup(auth,googleSignAndLoginProvider)
+    }
     const createUser=(email, password)=>{
         return createUserWithEmailAndPassword(auth,email, password);
     }
@@ -47,7 +51,8 @@ const AuthProvider = ({children}) => {
           user,
           SetUser,
           loading,
-          resetPassword
+          resetPassword,
+          signInAndLoginGoogle,
     }
     return (
         <div>

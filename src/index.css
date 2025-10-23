@@ -1,4 +1,6 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes:business --default;;
+@plugin "daisyui"
+
+body{
+  @apply bg-[#1a191d]
 }

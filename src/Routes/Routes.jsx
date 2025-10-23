@@ -3,15 +3,18 @@ import MainLayout from "../Layout/MainLayout";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Community from "../Pages/Community";
-
-
 import Home from "../Pages/Home";
-import GameDetails from "../Pages/GameDetails";
 import UpdateProfile from "../Pages/UpdateProfile";
+import PrivateRouter from "../PrivateRoutes/PrivateRouter";
+import GameDetails from "../Pages/GameDetails";
+import Games from "../Pages/Games";
+import MyProfil from "../Pages/MyProfil";
+import NotFound from "../Pages/NotFound";
 
 const router=createBrowserRouter([
     {
         path:'/',
+        errorElement:<NotFound></NotFound>,
         element:<MainLayout></MainLayout>,
         children:[
 
@@ -22,7 +25,7 @@ const router=createBrowserRouter([
             },
             {
                 path:'/GameDetails/:id',
-                element:<GameDetails></GameDetails>
+                element:<PrivateRouter><GameDetails/></PrivateRouter>
             },
 
             {
@@ -37,14 +40,25 @@ const router=createBrowserRouter([
                   path:'/Community',
                   element:<Community></Community>
             },
+            {
+                path:'/Games',
+                element:<Games></Games>
+            },
           
             {
                 path:'/updateProfile',
                 element:<UpdateProfile></UpdateProfile>,
             },
+            {
+                path:'/Myprofile',
+                element:<PrivateRouter><MyProfil/></PrivateRouter>
+            },
+            
         ]
-
-    }
+            
+    
+    },
+              
 ])
 
 export default router
