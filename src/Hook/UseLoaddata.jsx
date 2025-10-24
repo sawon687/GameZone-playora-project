@@ -6,7 +6,7 @@ const UseLoadData=()=>{
     const [loading,SetLoading]=useState(true)
 
     useEffect(()=>
-        {
+        {     SetLoading(true)
             axios('/gameData.json').then(res=> SetData(res.data)).catch(error=> console.log(error)).finally(()=> SetLoading(false))
         },[])
 

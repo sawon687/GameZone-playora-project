@@ -8,16 +8,18 @@ const UpdateProfile = () => {
            e.preventDefault()
            const displayName= e.target.Username.value;
            const photoURL=e.target.photoUrl.value;
-             // 🔥 logged-in check
+             
               if (!auth.currentUser) {
                 alert("No user logged in!");
                 return;
     }
            console.log(displayName,photoURL)
-           updateUser({displayName:displayName,photoURL:photoURL}).then(()=>{
+           updateUser({displayName:displayName,photoURL:photoURL}).then((res)=>{
             console.log(auth.currentUser.photoURL)
+             
             SetUser({...auth.currentUser})
             alert('success full user details')
+                   e.target.reset()
             
            }).catch(error=>{
              console.log(error.message)
@@ -25,7 +27,8 @@ const UpdateProfile = () => {
     }
     return (
         <>
-          <div className="hero min-h-screen">
+        <title>UpdateProfile</title>
+          <div className="hero min-h-screen bg-[#ece8e8]">
       <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
          <form onSubmit={handleUpdate}>

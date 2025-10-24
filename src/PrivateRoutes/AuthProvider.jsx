@@ -7,6 +7,7 @@ const AuthProvider = ({children}) => {
  
    const [user,SetUser]=useState(null)
    const [loading ,setLodaing]=useState(true)
+   const [forgatPassword,Setforgatepassword]=useState('')
     const googleSignAndLoginProvider=new GoogleAuthProvider()
 
     const signInAndLoginGoogle=()=>{
@@ -53,6 +54,8 @@ const AuthProvider = ({children}) => {
           loading,
           resetPassword,
           signInAndLoginGoogle,
+          Setforgatepassword,
+          forgatPassword,
     }
     return (
         <div>

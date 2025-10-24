@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagramSquare, FaLinkedin, FaTwitter } from 'react-icon
 
 const Footer = () => {
     return (
-  <footer className="footer sm:footer-horizontal bg-green-600 text-neutral-content pb-20 p-10">
+  <footer className="footer sm:footer-horizontal bg-gradient-to-r  from-purple-600 to-pink-600  text-neutral-content pb-20 p-10">
     <nav>
       <figure className='w-40 h-40 flex items-center'><img  src={logo} alt="Hero.io logo" /></figure>
           <div className='w-60'>

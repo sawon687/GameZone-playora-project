@@ -18,7 +18,7 @@ const PopularGame = () => {
         <h1 className='text-left ml-40 border-l-5 border-red-500 text-4xl font-bold'>Popular Games</h1>
         <div className='flex justify-center flex-col items-center'>
             
-              <div className='grid grid-cols-3 py-5 gap-20  mx-auto'>
+              <div className='grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 py-5 gap-20  mx-auto'>
                  {
                    popularcard.map(popularCard=> <PopularGameCard key={popularCard.id} popularCard={popularCard}></PopularGameCard> )
                  }

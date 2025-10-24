@@ -4,12 +4,16 @@ import { Authcontext } from '../PrivateRoutes/Context';
 import { useContext, useState } from 'react';
 import { Navigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import { useLocation } from 'react-router';
 
 
 const Register = () => {
     const {createUser,updateUser,signInAndLoginGoogle}=useContext(Authcontext)|| {}
     const [showPassword,setShowPassword]=useState(false)
-    const Navigate=useNavigate()
+
+    const location =useLocation()
+    const navigate=useNavigate()
     // console.log(createUser)
     const handleSignup=(e)=>{
        e.preventDefault();
@@ -19,6 +23,13 @@ const Register = () => {
         const Email=form.email.value;
         const Password=form.password.value;
         console.log(Name,PhotoUrl,Email,Password)
+
+        const passwordVerification=/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/
+        
+        if(!passwordVerification.test(Password))
+        {
+           return toast('Password must be at least 6 characters and include at least one uppercase and  lowercase letter.')
+        }
         createUser(Email,Password).then(res=>{
             console.log(res.user)
              
@@ -26,22 +37,25 @@ const Register = () => {
            
            updateUser({displayName:Name,photoURL: PhotoUrl}).then(()=>{
               
-               alert('create user')
-               return Navigate('/')
+               toast('Signup Succssfully')
+               return navigate(form,{replace:true})
               
            }).catch(error=>{
             console.log(error)
-            
+                
            })
 
-        }).catch(error=> console.log(error.message,error.code))
+        }).catch(error=>{console.log(error.message,error.code)
+           toast(error.message)
+        }
+      )
         
         
     }
 
     const googleSignUp=()=>{
        return signInAndLoginGoogle().then(()=>{
-          alert('success fully google signIn');
+          toast('successfully Google signIn');
        }).catch(error=>{
         console.log(error.message,error.code)
        })
@@ -66,11 +80,11 @@ const Register = () => {
           <div className=' relative'>
             <label className="label">Password</label>
           <input type={showPassword?'text':'password'} className="input outline-none"  name='password' placeholder="Password" />
-           <button onClick={()=>setShowPassword(!showPassword)} className=' absolute right-8 top-8'>{showPassword?<FaEye/>:<FaEyeSlash/>}</button>
+           <button type='button' onClick={()=>setShowPassword(!showPassword)} className=' absolute right-8 top-8'>{showPassword?<FaEye/>:<FaEyeSlash/>}</button>
           </div>
           <div><a className="link link-hover">Forgot password?</a></div>
           
-          <button className="btn btn-neutral mt-4">Login</button>
+          <button type='submit'  className="btn btn-neutral mt-4">Register</button>
 
           <p className='text-[1.1rem]'>Already have an account? <Link className='text-blue-500 hover:underline' to='/Login'>Login</Link></p>
           <button onClick={googleSignUp} className="btn bg-white text-black border-[#e5e5e5]">
@@ -79,6 +93,7 @@ const Register = () => {
              </button>
         </fieldset>
        </form>
+
       </div>
     </div>
   </div>

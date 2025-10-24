@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
+
 const Banner = () => {
   const [current, setCurrent] = useState(0);
   const sliderImg = [
@@ -26,19 +27,19 @@ const settings = {
 
 
   return (
-  <div className="w-10/12 mt-15 mx-auto bg-[#181818]  py-5 rounded-2xl flex justify-center items-center"> 
-  <div className="w-full">
+  <div className="w-11/12 bg-banner h-[400px] md:h-[600px]  mt-10 mx-auto   flex justify-center items-center"  > 
+  <div className="w-full bg-banner py-12 rounded-2xl h-full">
     <Slider {...settings}>
       {sliderImg.map((num, index) => (
-        <div key={num} className="px-10 flex justify-center items-center">
+        <div key={num} className=" flex justify-center items-center">
           <div
-            className={`transition-transform duration-700 rounded-2xl overflow-hidden shadow-lg
-              ${index === current ? "scale-100 z-20" : "scale-60 z-10 opacity-60"}`}
+            className={`transition-transform   w-[120px]   h-[200px] md:w-[250px] md:h-[400px] xl:w-[400px] xl:h-[500px]  duration-700 rounded-2xl overflow-hidden shadow-lg
+              ${index === current ? "scale-100  z-20" : "scale-60 z-10 opacity-60"}`}
           >
             <img
               src={num}
               alt=""
-              className="w-[200px]  h-[400px] md:w-[500px] md:h-[500px] object-fit rounded-2xl"
+              className=" h-[200px] w-[120px] md:w-[250px] md:h-[400px] xl:h-[500px] xl:w-[400px]  md:rounded-2xl"
             />
           </div>
         </div>
