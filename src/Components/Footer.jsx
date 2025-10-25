@@ -70,7 +70,9 @@ const Footer = () => {
 
       {/* Footer bottom line */}
       <div className="border-t border-white/10 mt-10 pt-6 text-center text-gray-400 text-sm">
-        © 2025 Playora. All rights reserved.
+        © 2025 
+Horidas
+© 2025 A Local Games Plyora. All rights reserved. Developed by Md AL jihad Sawon.
       </div>
     </footer>
   );

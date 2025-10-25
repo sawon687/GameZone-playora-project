@@ -8,7 +8,7 @@ const PopularGameCard = ({popularCard}) => {
     
     const {id,title ,coverPhoto ,description, ratings}=popularCard
     return (
-        <div className='rounded-2xl w-[350px]  bg-gray-700 h-full'>
+        <div className='rounded-2xl xl:w-[350px]  bg-gray-700 h-full'>
            
                 <figure><img className='hover:scale-120 transform transition duration-300 rounded-2xl  object-fit w-full h-[350px]' src={coverPhoto} alt="" /></figure>
                  

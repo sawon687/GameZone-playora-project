@@ -49,7 +49,7 @@ e.preventDefault()
                          />):
             (<FaCircle size={28}/>)}</NavLink>
           </li></>:
-          <><li><NavLink className='btn liner-gardint cursor-pointer' to='/Register'>RegisTer</NavLink></li>
+          <><li><NavLink className='btn bg-gradient-to-r  from-purple-600 to-blue-600  cursor-pointer' to='/Register'>RegisTer</NavLink></li>
           <li><NavLink className="btn  bg-gradient-to-r hover:opacity-50 from-purple-600 to-pink-600  text-white" to='/Login'>Login</NavLink></li></>
         }
        
@@ -58,7 +58,7 @@ e.preventDefault()
     return (
     
         <>
-       <div className="navbar md:px-20  p-5 flex justify-between shadow-2xl    bg-base-100 ">
+       <div className="navbar md:px-20  lg:p-5 flex justify-between shadow-2xl    bg-base-100 ">
 
        
   <div className="navbar-start  ">

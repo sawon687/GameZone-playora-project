@@ -1,7 +1,7 @@
 
 import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../PrivateRoutes/Context';
-import { useContext, useEffect, useState } from 'react';
+import { useContext ,useState } from 'react';
 import { Navigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -115,6 +115,7 @@ const Register = () => {
                 required
               />
             </div>
+          
 
             {/* Email */}
             <div>

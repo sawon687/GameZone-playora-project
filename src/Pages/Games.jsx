@@ -53,14 +53,14 @@ const Games = () => {
                       <h1 className='text-center pt-10 bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600   text-transparent  text-5xl font-bold'>{displaytext}</h1>
                   <p className='text-center mt-5 text-gray-400 '>This page will list all the games in the library.</p>
             </motion.div>
-         <div className='w-10/12 mx-auto'> <h1 className='font-bold text-left text-3xl'>AllGames({data.length})</h1></div>
+         <div className='w-11/12 mx-auto'> <h1 className='font-bold text-left text-3xl'>AllGames({data.length})</h1></div>
         <motion.div 
         initial={{y:-50,opacity:0, scale:1}}
             animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.1 }}
          className='flex justify-center flex-col items-center'>
             
-              <div className='grid sm:grid-cols-2 md:grid-cols-3 py-5 gap-20  mx-auto'>
+              <div className='grid  md:grid-cols-2 lg:grid-cols-3  py-5 gap-10  mx-auto'>
                  {
                    data.map(popularCard=> <PopularGameCard key={popularCard.id} popularCard={popularCard}></PopularGameCard> )
                  }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RiseLoader } from 'react-spinners'; // Import করা লাগবে
+import { RiseLoader } from 'react-spinners'; 
 const LoadingPage = () => {
     return (
         <div className='flex flex-col space-y-10 min-h-screen justify-center items-center '>
