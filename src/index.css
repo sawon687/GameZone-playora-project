@@ -7,8 +7,12 @@
  }
  
 body{
+  font-family:"Poppins", sans-serif ;
+  
   @apply bg-[#1a191d]
-  font-family: "Poppins", sans-serif;
+
+
+ 
 }
 
 .login-bg{
