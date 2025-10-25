@@ -59,7 +59,7 @@ const AuthProvider = ({children}) => {
     }
     return (
         <div>
-            <Authcontext value={custInfo}>{children}</Authcontext>
+            <Authcontext.Provider value={custInfo}>{children}</Authcontext.Provider>
         </div> 
         
     );
