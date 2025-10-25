@@ -11,6 +11,8 @@ import Games from "../Pages/Games";
 import MyProfil from "../Pages/MyProfil";
 import NotFound from "../Pages/NotFound";
 import Forgatepassword from "../Pages/Forgatepassword";
+import About from "../Pages/About";
+
 
 const router=createBrowserRouter([
     {
@@ -55,6 +57,10 @@ const router=createBrowserRouter([
                 path:'/Forgatepassword',
                 element:<Forgatepassword></Forgatepassword>
 
+            },
+            {
+                   path:'/About',
+                   element:<About></About>
             }
            
             

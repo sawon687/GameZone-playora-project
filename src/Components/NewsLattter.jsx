@@ -1,14 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Newsletter = () => {
+ const [NewsLatttertext, SetNewsLattertext] = useState("");
+  const fullText = "Join the Playora Newsletter ";
+
+ useEffect(()=>{
+    let index=0;
+    let delating=false
+    const interval=setInterval(() => {
+      if(!delating)
+      {
+         SetNewsLattertext(fullText.slice(0,index))
+         index++;
+
+         if(index> fullText.length)
+         {
+            delating=true;
+            index=fullText.length
+         }
+      }else{
+         SetNewsLattertext(fullText.slice(0,index))
+         index--
+         if(index<0)
+         {
+           delating=false
+           index=0
+         }
+      }
+
+
+    }, 120);
+
+ return ()=>{
+     clearInterval(interval)
+ }
+ },[])
+    
+
+
   return (
     <section className="bg-[#181818] text-white py-16 px-4">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-          Join the Playora Newsletter 🎮
+          {NewsLatttertext} 🎮
         </h2>
         <p className="text-gray-400 mb-8">
-          Subscribe to get the latest game updates, new releases, and exclusive offers delivered straight to your inbox.
+          Subscribe to get the latest game updates, new releases, and exclusive
+          offers delivered straight to your inbox.
         </p>
 
         <form

@@ -2,12 +2,18 @@
 import React, { useContext } from 'react';
 import { Authcontext } from './Context';
 import { Navigate, useLocation } from 'react-router';
-import { form } from 'motion/react-client';
+
+import LoadingPage from '../Pages/LoadingPage';
 
 
 const PrivateRouter = ({children}) => {
-    const {user}=useContext(Authcontext)
+    const {user,loading}=useContext(Authcontext)
+
     const location=useLocation()
+
+    if(loading){
+        return<LoadingPage></LoadingPage>
+    }
       
     if(user)
     {
@@ -15,7 +21,7 @@ const PrivateRouter = ({children}) => {
     }
     
 
-    return<Navigate to='/Login' state={{form:location}} replace></Navigate>
+    return<Navigate to='/Login' state={{path:location}} replace></Navigate>
       
     
 };

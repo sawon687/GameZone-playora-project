@@ -6,6 +6,7 @@ import NewsLattter from '../Components/NewsLattter';
 const Home = () => {
     return (
         <div >
+            <title>Home</title>
            <Banner></Banner>
            <PopularGame></PopularGame>
            <NewsLattter></NewsLattter>

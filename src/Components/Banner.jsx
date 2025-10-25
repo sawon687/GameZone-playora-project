@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from 'framer-motion';
 
 
 
@@ -27,8 +28,16 @@ const settings = {
 
 
   return (
-  <div className="w-11/12 bg-banner h-[400px] md:h-[600px]  mt-10 mx-auto   flex justify-center items-center"  > 
-  <div className="w-full bg-banner py-12 rounded-2xl h-full">
+  <motion.div
+  initial={{y:30,opacity: 0 }}
+  animate={{y:0, opacity:1 }}
+      transition={{ duration: 0.6 }}
+   className="w-11/12 bg-banner h-[400px] md:h-[600px]  mt-10 mx-auto   flex justify-center items-center"  > 
+  <div
+ 
+
+  
+  className="w-full bg-banner py-12 rounded-2xl h-full">
     <Slider {...settings}>
       {sliderImg.map((num, index) => (
         <div key={num} className=" flex justify-center items-center">
@@ -46,7 +55,7 @@ const settings = {
       ))}
     </Slider>
   </div>
-</div>
+</motion.div>
 
 
   );

@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 const NotFound = () => {
     return (
         <div className='bg-[#f0f0f0] space-y-5 flex-col flex justify-center items-center min-h-screen'>
+            <title>Not Found</title>
             <div className='w-[25rem] h-[25rem] border-[2rem] border-red-500  rounded-full'>
                 <h1 className='font-bold  text-red-500 text-[20rem] -mt-30 text-center'>!</h1>
                 

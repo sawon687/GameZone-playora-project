@@ -7,6 +7,7 @@ import { FaCircle } from 'react-icons/fa';
 
 
 
+
 const Navbar = () => {
   const {user,loading,logoutNow}=useContext(Authcontext)
   
@@ -34,11 +35,13 @@ e.preventDefault()
     <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''}  to='/'>Home</NavLink></li>
         
     
-        <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/Games'>Games</NavLink></li>
-        
-        
-        {         
-          user? <><li><NavLink onClick={handleLogOut}  className='btn liner-gardint' >Logout</NavLink></li>
+        <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/Games'>AllGames</NavLink></li>
+        <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/About'>About</NavLink></li>
+    </>
+
+    const authinButton=<>
+    {         
+          user? <><li><NavLink onClick={handleLogOut}  className='btn bg-gradient-to-r  from-purple-600 to-pink-600 ' >Logout</NavLink></li>
           <li><NavLink to='/MyProfile'>
             {user?.photoURL?( <img  className='w-[40px] h-[40px]  rounded-full' src={user?.photoURL} alt=""  
                          />):
@@ -48,13 +51,12 @@ e.preventDefault()
           <li><NavLink className="btn px-7 bg-gradient-to-r hover:opacity-50 from-purple-600 to-pink-600  text-white" to='/Login'>Login</NavLink></li></>
         }
        
-      
     
     </>
     return (
     
         <>
-       <div className="navbar border-1  border-pink-600 ring-  rounded-2xl p-5 shadow-2xl   px-20 bg-base-100 shadow-sm">
+       <div className="navbar  ring-   p-5 shadow-2xl   px-20 bg-base-100 ">
 
        
   <div className="navbar-start  ">
@@ -74,11 +76,18 @@ e.preventDefault()
  
     </a>
     </div>
+
+  </div>
+
+  <div className="navbar-center hidden lg:flex">
+    <ul className="menu menu-horizontal px-1">
+    {links}
+    </ul>
   </div>
   
   <div className="navbar-end mr-5 hidden lg:flex">
     <ul className=" flex  items-center justify-between gap-5  px-1">
-        {links}
+        {authinButton}
     </ul>
   </div>
 

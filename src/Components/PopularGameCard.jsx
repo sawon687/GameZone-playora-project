@@ -8,9 +8,9 @@ const PopularGameCard = ({popularCard}) => {
     
     const {id,title ,coverPhoto ,description, ratings}=popularCard
     return (
-        <div className='rounded-2xl w-[300px]  bg-gray-700 h-full'>
+        <div className='rounded-2xl w-[350px]  bg-gray-700 h-full'>
            
-                <figure><img className=' rounded-2xl  object-fit w-full h-[350px]' src={coverPhoto} alt="" /></figure>
+                <figure><img className='hover:scale-120 transform transition duration-300 rounded-2xl  object-fit w-full h-[350px]' src={coverPhoto} alt="" /></figure>
                  
                     <div className='space-y-2 px-4 py-3 h-full' >
                          <div className='flex justify-between'>
@@ -22,7 +22,7 @@ const PopularGameCard = ({popularCard}) => {
                                 </p>
                                 
 
-                                 <Link className='bg-gradient-to-b from-blue-500 via-indigo-00  btn ouline-0 font-bold w-full'  to={`/GameDetails/${id}`}>SeeMore</Link>
+                                 <Link className='bg-gradient-to-r  from-purple-600 to-pink-600   btn ouline-0 font-bold w-full'  to={`/GameDetails/${id}`}>SeeMore</Link>
                          
                               </div>
                    

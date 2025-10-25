@@ -1,14 +1,16 @@
 import { use, useRef, useState } from 'react';
 import { Authcontext } from '../PrivateRoutes/Context';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link, useNavigate   } from 'react-router';
+import { Link, useLocation, useNavigate   } from 'react-router';
 import { toast } from 'react-toastify';
-import { form } from 'motion/react-client';
+
 
 const Login = () => {
     const {LoginUser,signInAndLoginGoogle, resetPassword}=use(Authcontext)
      const [showPassword,setShowPassword]=useState(false)
      const navigate=useNavigate()
+     const location=useLocation()
+     const path=location.state?.path?.pathname || '/'
      
      
     const emailRef=useRef()
@@ -20,7 +22,7 @@ const Login = () => {
        LoginUser(Email,password).then(res=>{
               console.log(res)
            toast('login successfully')
-             navigate(form,{replace:true})
+             navigate(path,{replace:true})
        }).catch(error=> console.log(error.message))
         
      }
@@ -42,7 +44,10 @@ const Login = () => {
      
     const googleSignUp=()=>{
        return signInAndLoginGoogle().then(()=>{
+   
           toast('successfully Google signIn');
+               navigate(path,{replace:true})
+           
        }).catch(error=>{
         console.log(error.message,error.code)
        })
@@ -50,6 +55,7 @@ const Login = () => {
     
     return (
        <div className="w-full flex justify-center items-center min-h-screen bg-[#0e0e0e] login-bg px-4">
+        <title>Login</title>
   <div className="w-full max-w-[900px] bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-2xl flex flex-col md:flex-row overflow-hidden">
 
     {/* Left side (Register) */}

@@ -7,6 +7,7 @@ const MyProfil = () => {
     return (
         <>
             <div className='   flex justify-center   mt-40 items-center'>
+                <title>MyProfile</title>
           <div className='w-[250px] space-y-5 flex flex-col shadow-2xl bg-[#181818]  rounded-xl justify-center items-center h-[350px] '>
                 {
                         user?<img className='w-[100px] h-[100px] rounded-full' src={user?.photoURL} alt="" />:<FaCircle size={40}/>
