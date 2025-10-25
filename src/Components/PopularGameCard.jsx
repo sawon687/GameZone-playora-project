@@ -22,7 +22,7 @@ const PopularGameCard = ({popularCard}) => {
                                 </p>
                                 
 
-                                 <Link className='bg-gradient-to-r  from-purple-600 to-pink-600   btn ouline-0 font-bold w-full'  to={`/GameDetails/${id}`}>SeeMore</Link>
+                                 <Link className='bg-gradient-to-r  from-purple-600 to-pink-600   btn border-none ouline-0 font-bold w-full'  to={`/GameDetails/${id}`}>SeeMore</Link>
                          
                               </div>
                    

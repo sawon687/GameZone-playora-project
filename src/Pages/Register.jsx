@@ -135,13 +135,13 @@ const Register = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Enter your password"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+                className="w-full px-4 py-3  rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-4 top-10 text-gray-300 hover:text-white"
+                className="absolute right-4 top-11 text-gray-300 hover:text-white"
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </button>

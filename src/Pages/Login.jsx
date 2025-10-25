@@ -24,7 +24,15 @@ const Login = () => {
            toast('login successfully')
              navigate(path,{replace:true})
              
-       }).catch(error=> console.log(error.message))
+       }).catch(error=>{ console.log(error.message)
+        
+         if(error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password') {
+      toast.error('Password does not match');
+        } 
+        else {
+      toast.error('Login failed. Please try again.');
+          }
+       })
         
      }
 
@@ -36,7 +44,8 @@ const Login = () => {
            
            
         }).catch(error=>{
-            console.log(error.message)
+            console.log(error.message);
+            toast(error.message)
         })
          
          
@@ -92,7 +101,7 @@ const Login = () => {
                 name="email"
                 className="input w-full outline-none bg-white/10 backdrop-blur-sm text-white placeholder-gray-400"
                 placeholder="Email"
-                required
+               
               />
             </div>
 

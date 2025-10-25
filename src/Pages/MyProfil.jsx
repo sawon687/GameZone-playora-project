@@ -41,7 +41,7 @@ const MyProfil = () => {
             <span className="font-semibold text-white">Account Type:</span>{" "}
             {user ? "Registered" : "Guest"}
           </p>
-          <div className="flex items-center mr-54 justify-center gap-2">
+          <div className="flex gap-2">
             <span className="font-semibold text-left text-white">Email Verified:</span>{" "}
             {user?.emailVerified ? (
               <span className="text-green-400 flex items-center gap-1">
