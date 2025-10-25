@@ -32,7 +32,7 @@ const settings = {
   initial={{y:30,opacity: 0 }}
   animate={{y:0, opacity:1 }}
       transition={{ duration: 0.6 }}
-   className="w-11/12 bg-banner h-[400px] md:h-[600px]  mt-10 mx-auto   flex justify-center items-center"  > 
+   className="w-11/12 bg-banner h-[400px] md:h-[600px]  mt-10 mx-auto   flex justify-center items-center rounded-2xl"  > 
   <div
  
 

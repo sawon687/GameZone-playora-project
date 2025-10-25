@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import { Authcontext } from '../PrivateRoutes/Context';
 import LoadingPage from '../Pages/LoadingPage';
 import { FaCircle } from 'react-icons/fa';
+import Navlogo from '../assets/Logonav.png'
+import { toast } from 'react-toastify';
 
 
 
@@ -18,7 +20,7 @@ e.preventDefault()
   console.log('click')
         logoutNow().then(()=>{
             navigate('/')
-            alert('Sign-out successful')
+            toast('Sign-out successful')
         }).catch(error=>console.log(error))
     }
     
@@ -32,23 +34,23 @@ e.preventDefault()
 
   
     const links=<>
-    <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''}  to='/'>Home</NavLink></li>
+    <li><NavLink className={({isActive})=> isActive?' cursor-pointer border-b-2 border-pink-500 bg-clip-text bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''}  to='/'>Home</NavLink></li>
         
     
-        <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/Games'>AllGames</NavLink></li>
-        <li><NavLink className={({isActive})=> isActive?' underline bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/About'>About</NavLink></li>
+        <li><NavLink className={({isActive})=> isActive?' border-b-2 border-pink-500 bg-clip-text cursor-pointer  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/Games'>AllGames</NavLink></li>
+        <li><NavLink className={({isActive})=> isActive?'  border-b-2 border-pink-500 bg-clip-text cursor-pointer  bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent':''} to='/About'>About</NavLink></li>
     </>
 
     const authinButton=<>
     {         
-          user? <><li><NavLink onClick={handleLogOut}  className='btn bg-gradient-to-r  from-purple-600 to-pink-600 ' >Logout</NavLink></li>
+          user? <><li><NavLink onClick={handleLogOut}  className='btn cursor-pointer bg-gradient-to-r  from-purple-600 to-pink-600 ' >Logout</NavLink></li>
           <li><NavLink to='/MyProfile'>
-            {user?.photoURL?( <img  className='w-[40px] h-[40px]  rounded-full' src={user?.photoURL} alt=""  
+            {user?.photoURL?( <img  className='w-10 h-10 cursor-pointer rounded-full ring-2 ring-purple-500' src={user?.photoURL} alt=""  
                          />):
             (<FaCircle size={28}/>)}</NavLink>
           </li></>:
-          <><li><NavLink className='btn liner-gardint' to='/Register'>RegisTer</NavLink></li>
-          <li><NavLink className="btn px-7 bg-gradient-to-r hover:opacity-50 from-purple-600 to-pink-600  text-white" to='/Login'>Login</NavLink></li></>
+          <><li><NavLink className='btn liner-gardint cursor-pointer' to='/Register'>RegisTer</NavLink></li>
+          <li><NavLink className="btn  bg-gradient-to-r hover:opacity-50 from-purple-600 to-pink-600  text-white" to='/Login'>Login</NavLink></li></>
         }
        
     
@@ -56,7 +58,7 @@ e.preventDefault()
     return (
     
         <>
-       <div className="navbar  ring-   p-5 shadow-2xl   px-20 bg-base-100 ">
+       <div className="navbar  p-5 flex justify-between shadow-2xl    bg-base-100 ">
 
        
   <div className="navbar-start  ">
@@ -72,8 +74,8 @@ e.preventDefault()
     </div>
     <div>
         <a className="btn btn-ghost  text-xl">
-       <h1 className='bg-clip-text text-2xl bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent'>Playora</h1>
- 
+       <h1 className='bg-clip-text text-2xl bg-gradient-to-r  from-purple-600 to-pink-600  font-bold text-transparent'>Playora </h1>
+           <img className='w-10 h-10' src={Navlogo} alt="" />
     </a>
     </div>
 
@@ -85,7 +87,7 @@ e.preventDefault()
     </ul>
   </div>
   
-  <div className="navbar-end mr-5 hidden lg:flex">
+  <div className="navbar-end   lg:flex">
     <ul className=" flex  items-center justify-between gap-5  px-1">
         {authinButton}
     </ul>

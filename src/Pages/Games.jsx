@@ -3,9 +3,43 @@ import PopularGameCard from '../Components/PopularGameCard';
 import { Authcontext } from '../PrivateRoutes/Context';
 import UseLoadData from '../Hook/UseLoaddata';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 const Games = () => {
     const {data}=UseLoadData()
     console.log(data)
+
+    const [displaytext,SetDisplayText]=useState('')
+
+    const fullText='Popular Games'
+
+    useEffect(()=>
+    {   let index=0
+      let delating=false
+      const interval=setInterval(() => {
+        if(!delating)
+        {
+           SetDisplayText(fullText.slice(0,index))
+           index++
+           if(index > fullText.length)
+           {
+               delating=true;
+               index=fullText.length
+           }
+        }else{
+          SetDisplayText(fullText.slice(0,index))
+           index--
+           if(index<0)
+           {
+             delating=false;
+             index=0;
+
+           }
+        }
+      }, 120);
+            return ()=>{
+              clearInterval(interval)
+            }
+    },[])
     return (
         // bg-[#010313]
         <>
@@ -16,7 +50,7 @@ const Games = () => {
             animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1 }}
            >
-                      <h1 className='text-center pt-10 bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600   text-transparent  text-5xl font-bold'>Popular Games</h1>
+                      <h1 className='text-center pt-10 bg-clip-text  bg-gradient-to-r  from-purple-600 to-pink-600   text-transparent  text-5xl font-bold'>{displaytext}</h1>
                   <p className='text-center text-gray-400 '>This page will list all the games in the library.</p>
             </motion.div>
          <div className='w-10/12 mx-auto'> <h1 className='font-bold text-left text-3xl'>AllGames({data.length})</h1></div>

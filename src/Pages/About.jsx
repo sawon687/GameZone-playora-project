@@ -37,7 +37,7 @@ useEffect(()=>{
         <img
           src={logo}
           alt="Playora Logo"
-          className="w-82 h-42 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+          className="max-w-96 h-72 object-cover  drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
         />
         <span className='flex justify-center'>PLAY EXPLORE LEVEL UP HERE</span>
       </motion.figure>

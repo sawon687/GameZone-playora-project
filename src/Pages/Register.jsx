@@ -44,12 +44,7 @@ const Register = () => {
         }
         createUser(Email,Password).then(res=>{
             console.log(res.user)
-             
-           
-           
            updateUser({displayName:Name,photoURL: PhotoUrl}).then(()=>{
-              
-              
                 navigate(path,{replace:true})
                return  toast('Signup Succssfully')
               
@@ -68,44 +63,121 @@ const Register = () => {
 
   
     return (
-        <div>
-          <title>Register</title>
-            <div className="hero min-h-screen">
-      <div className="card  w-full max-w-sm shrink-0 shadow-2xl">
-      <div className="card-body">
-       <form onSubmit={handleSignup}>
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 p-4">
+      <div className="flex flex-col md:flex-row backdrop-blur-lg bg-white/10 shadow-2xl rounded-3xl overflow-hidden w-full max-w-5xl border border-white/20">
 
-         <fieldset className="fieldset  ">
-            {/* user Name */}
-              <label className="label">UserName</label>
-          <input type="text" className="input" name='Name' placeholder="UserName" />
-            <label className="label">PhotoURL</label>
-          <input type="text" className="input" name='photoUrl' placeholder="PhotoURL" />
-            {/* email */}
-          <label className="label">Email</label>
-          <input type="email" className="input" name='email'  placeholder="Email" />
-          {/* password */}
-          <div className=' relative'>
-            <label className="label">Password</label>
-          <input type={showPassword?'text':'password'} className="input outline-none"  name='password' placeholder="Password" />
-           <button type='button' onClick={()=>setShowPassword(!showPassword)} className=' absolute right-8 top-8'>{showPassword?<FaEye/>:<FaEyeSlash/>}</button>
-          </div>
-          <div><a className="link link-hover">Forgot password?</a></div>
-          
-          <button type='submit'  className="btn btn-neutral mt-4">Register</button>
+        {/* Left Section */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 text-white bg-gradient-to-b from-purple-800/70 to-pink-700/70">
+          <h1 className="text-4xl font-bold mb-2 text-center">Already have an account?</h1>
+          <p className="text-lg text-center mb-6">Sign in and continue your journey!</p>
+          <Link
+            to="/Login"
+            className="px-8 py-3 rounded-xl bg-white text-black font-semibold hover:scale-105 duration-300"
+          >
+            Login
+          </Link>
+        </div>
 
-          <p className='text-[1.1rem]'>Already have an account? <Link className='text-blue-500 hover:underline' to='/Login'>Login</Link></p>
-          <button type='button' onClick={googleSignUp} className="btn bg-white text-black border-[#e5e5e5]">
-            <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
-                 Login with Google
-             </button>
-        </fieldset>
-       </form>
+        {/* Right Section */}
+        <div className="w-full md:w-1/2 bg-[#0f0f0f]/70 text-white p-8">
+          <h1 className="text-4xl text-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+            Sign Up to Playora
+          </h1>
+          <p className="text-center text-gray-300 mt-2 mb-6">
+            Create your free account and start exploring the world of games 🎮
+          </p>
 
+          <form onSubmit={handleSignup} className="space-y-4">
+            {/* Username */}
+            <div>
+              <label className="block mb-1 font-semibold">Username</label>
+              <input
+                type="text"
+                name="Name"
+                placeholder="Enter your name"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+              />
+            </div>
+
+            {/* Photo URL */}
+            <div>
+              <label className="block mb-1 font-semibold">Photo URL</label>
+              <input
+                type="text"
+                name="photoUrl"
+                placeholder="Profile photo link"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label className="block mb-1 font-semibold">Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+              />
+            </div>
+
+            {/* Password */}
+            <div className="relative">
+              <label className="block mb-1 font-semibold">Password</label>
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Enter your password"
+                className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-10 text-gray-300 hover:text-white"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+
+            <div className="text-right text-sm text-pink-400 hover:underline cursor-pointer">
+              Forgot password?
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3 mt-2 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg font-semibold hover:opacity-90 transition duration-300"
+            >
+              Register
+            </button>
+
+            <p className="text-center text-gray-400 mt-3 font-medium">— or —</p>
+
+            <button
+              type="button"
+              onClick={googleSignUp}
+              className="w-full py-3 mt-2 bg-white text-black rounded-lg font-semibold flex justify-center items-center gap-2 hover:scale-105 transition"
+            >
+              <svg
+                aria-label="Google logo"
+                width="18"
+                height="18"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+              >
+                <g>
+                  <path d="m0 0H512V512H0" fill="#fff"></path>
+                  <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path>
+                  <path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path>
+                  <path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path>
+                  <path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path>
+                </g>
+              </svg>
+              Sign Up with Google
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-        </div>
     );
 };
 
