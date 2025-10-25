@@ -1,7 +1,7 @@
 
 import { Link, useLocation, useNavigate } from 'react-router';
 import { Authcontext } from '../PrivateRoutes/Context';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Navigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { toast } from 'react-toastify';
@@ -46,6 +46,7 @@ const Register = () => {
             console.log(res.user)
            updateUser({displayName:Name,photoURL: PhotoUrl}).then(()=>{
                 navigate(path,{replace:true})
+                e.target.reset()
                return  toast('Signup Succssfully')
               
            }).catch(error=>{
@@ -61,13 +62,16 @@ const Register = () => {
         
     }
 
+   
+
   
     return (
+      
       <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 p-4">
       <div className="flex flex-col md:flex-row backdrop-blur-lg bg-white/10 shadow-2xl rounded-3xl overflow-hidden w-full max-w-5xl border border-white/20">
-
+     <title>Register </title>
         {/* Left Section */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 text-white bg-gradient-to-b from-purple-800/70 to-pink-700/70">
+        <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 text-white bg-gradient-to-b from-purple-800/70 to-pink-700/70" >
           <h1 className="text-4xl font-bold mb-2 text-center">Already have an account?</h1>
           <p className="text-lg text-center mb-6">Sign in and continue your journey!</p>
           <Link
@@ -96,6 +100,7 @@ const Register = () => {
                 name="Name"
                 placeholder="Enter your name"
                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+                required
               />
             </div>
 
@@ -107,6 +112,7 @@ const Register = () => {
                 name="photoUrl"
                 placeholder="Profile photo link"
                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+                required
               />
             </div>
 
@@ -118,6 +124,7 @@ const Register = () => {
                 name="email"
                 placeholder="Enter your email"
                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+                required
               />
             </div>
 
@@ -129,6 +136,7 @@ const Register = () => {
                 name="password"
                 placeholder="Enter your password"
                 className="w-full px-4 py-3 rounded-lg bg-white/10 text-gray-200 placeholder-gray-400 focus:ring-2 focus:ring-pink-500 outline-none"
+                required
               />
               <button
                 type="button"

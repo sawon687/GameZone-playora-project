@@ -58,7 +58,7 @@ e.preventDefault()
     return (
     
         <>
-       <div className="navbar  p-5 flex justify-between shadow-2xl    bg-base-100 ">
+       <div className="navbar md:px-20  p-5 flex justify-between shadow-2xl    bg-base-100 ">
 
        
   <div className="navbar-start  ">

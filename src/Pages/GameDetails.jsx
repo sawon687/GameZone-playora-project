@@ -20,6 +20,7 @@ const GameDetails = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] flex justify-center items-center py-20 px-6">
+        <title>Game Details</title>
       <div className="max-w-4xl w-full glassmorphism rounded-3xl shadow-2xl border border-white/10 p-10 text-white backdrop-blur-lg bg-white/10">
         <div className="flex flex-col md:flex-row items-center gap-10">
           <figure className="relative group">

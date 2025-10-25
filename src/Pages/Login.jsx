@@ -1,4 +1,4 @@
-import { use, useRef, useState } from 'react';
+import {  useContext, useRef, useState } from 'react';
 import { Authcontext } from '../PrivateRoutes/Context';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useLocation, useNavigate   } from 'react-router';
@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 
 const Login = () => {
-    const {LoginUser,signInAndLoginGoogle, resetPassword}=use(Authcontext)
+    const {LoginUser,signInAndLoginGoogle, resetPassword}=useContext(Authcontext)
      const [showPassword,setShowPassword]=useState(false)
      const navigate=useNavigate()
      const location=useLocation()
@@ -23,6 +23,7 @@ const Login = () => {
               console.log(res)
            toast('login successfully')
              navigate(path,{replace:true})
+             
        }).catch(error=> console.log(error.message))
         
      }
@@ -31,7 +32,6 @@ const Login = () => {
        e.preventDefault()
        const email=  emailRef.current.value
          resetPassword(email).then(()=>{
-           toast('password reset check your email')
             navigate('/Forgatepassword',{state:{email}})
            
            
@@ -92,6 +92,7 @@ const Login = () => {
                 name="email"
                 className="input w-full outline-none bg-white/10 backdrop-blur-sm text-white placeholder-gray-400"
                 placeholder="Email"
+                required
               />
             </div>
 
@@ -102,6 +103,7 @@ const Login = () => {
                 name="password"
                 className="input w-full outline-none bg-white/10 backdrop-blur-sm text-white placeholder-gray-400"
                 placeholder="Password"
+                required
               />
               <button
                 onClick={() => setShowPassword(!showPassword)}
