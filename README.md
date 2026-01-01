@@ -6,12 +6,11 @@ This project was developed as part of **Programming Hero (Batch-12, Assignment-9
 ---
 
 ## 🔗 Live Website
-👉 Live Link: [https://your-live-site-link.com](https://radiant-dragonjihadsawon177607-f3ce2c.netlify.app/)
+👉 Live Link: https://radiant-dragonjihadsawon177607-f3ce2c.netlify.app
 
 ---
 
-## 📂 Repository
-👉 GitHub Repo: 
+
 
 ---
 
@@ -25,10 +24,10 @@ This project was developed as part of **Programming Hero (Batch-12, Assignment-9
 ---
 
 ## 🛠️ Technologies Used
-- **Frontend:** React.js / Next.js
+- **Frontend:** React.js 
 - **Styling:** Tailwind CSS
 - **State Management:** React Hooks
-- **Routing:** React Router / Next Navigation
+- **Routing:** React Router 
 - **Authentication:** Firebase (if used)
 - **Deployment:** Netlify / Vercel
 
